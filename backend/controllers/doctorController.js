@@ -1,5 +1,16 @@
 const Doctor = require("../models/Doctor");
 
+// create new doctor (temp)
+exports.createDoctor = async (req, res) => {
+    try {
+        const newDoctor = new Doctor(req.body);
+        const savedDoctor = await newDoctor.save();
+        res.status(201).json(savedDoctor);
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+};
+
 // get all doctors
 exports.getAllDoctors = async (req, res) => {
     try {

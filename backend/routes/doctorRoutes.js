@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const doctorController = require("../controllers/doctorController");
 
+// create new doctor (temp)
+router.post("/add", doctorController.createDoctor);
+
 // get all doctors
 router.get("/", doctorController.getAllDoctors);
 

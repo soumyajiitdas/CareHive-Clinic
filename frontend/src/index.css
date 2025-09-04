@@ -1,0 +1,217 @@
+/*CSS for Navbar Component */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2a6eb2;
+  padding: 12px 20px;
+}
+
+.nav-logo {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ecf0f1;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+.nav-links li {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links li:hover {
+  color: #1efc01;
+}
+
+/* CSS for Home Page */
+.home {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.home-header h1 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.home-header p {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 12px 18px;
+  background-color: #1abc9c;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.home-btn:hover {
+  background-color: #16a085;
+}
+
+/* CSS for Doctors Page */
+.doctors {
+  padding: 20px;
+  text-align: center;
+}
+
+.doctors h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.doctor-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.doctor-card {
+  background-color: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  text-align: left;
+}
+
+.doctor-card:hover {
+  transform: scale(1.03);
+}
+
+.doctor-card h3 {
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+.doctor-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* CSS for Patients Page */
+.patients {
+  padding: 20px;
+}
+
+.patients h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.patient-info, .patient-appointments {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.patient-info h3,
+.patient-appointments h3 {
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.patient-info p,
+.patient-appointments p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* CSS for AppointmentCard Component */
+.appointment-card {
+  background-color: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.appointment-card:hover {
+  transform: scale(1.02);
+}
+
+.appointment-card h3 {
+  margin: 0 0 10px;
+  color: #2c3e50;
+}
+
+.appointment-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #34495e;
+}
+
+
+/* CSS for Footer Component */
+.footer {
+  background-color: #2a6eb2;
+  padding: 15px 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-copy {
+  color: #ecf0f1;
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-links li:hover {
+  color: #1efc01;
+}
+
