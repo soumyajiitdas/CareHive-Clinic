@@ -1,11 +1,13 @@
 import React from 'react';
+import AppointmentCard from "../components/AppointmentCard";
 
 export const Patients = () => {
-    // Sample patient info
+  // Sample patient info
   const patient = {
     id: 1,
     name: "Alice Johnson",
     age: 29,
+    gender: "male",
     email: "alice.johnson@example.com"
   };
 
@@ -32,21 +34,32 @@ export const Patients = () => {
 
   return <>
     <div className="patients">
-      <h2>Patient Dashboard</h2>
+      <h2 className="patients-title">Patient Dashboard</h2>
 
-      <div className="patient-info">
+      {/* Section 1 - Patient Info */}
+      <div className="patient-info-box">
         <h3>Patient Information</h3>
         <p><strong>Name:</strong> {patient.name}</p>
         <p><strong>Age:</strong> {patient.age}</p>
         <p><strong>Email:</strong> {patient.email}</p>
       </div>
 
-      <div className="patient-appointments">
+      {/* Section 2 - Appointments */}
+      <div className="appointments-section">
         <h3>Recent Appointments</h3>
-        <p>No appointments found.</p>
+        {recentAppointments.length > 0 ? (
+          <div className="appointments-grid">
+            {recentAppointments.map(appt => (
+              <div className="appointment-card" key={appt.id}>
+                <AppointmentCard appointment={appt} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>No appointments found.</p>
+        )}
       </div>
     </div>
-
   </>
 }
 

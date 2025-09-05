@@ -1,217 +1,624 @@
+* {
+  margin: 0px;
+}
+
 /*CSS for Navbar Component */
 .navbar {
+  position: sticky;
+  top: 0;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2a6eb2;
-  padding: 12px 20px;
+  padding: 15px 40px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(26, 188, 156, 0.4);
+  z-index: 1000;
+  margin-bottom: 5px;
 }
 
-.nav-logo {
+/* Logo */
+.navbar-logo a {
   text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  color: #ecf0f1;
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: 1px;
 }
 
-.nav-links {
+.navbar-logo span {
+  color: #1abc9c;
+}
+
+/* Links */
+.navbar-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
   margin: 0;
+  padding: 0;
 }
 
-.nav-links li {
+.navbar-links li {
+  position: relative;
+}
+
+.navbar-links li a {
   text-decoration: none;
-  color: #ecf0f1;
   font-size: 16px;
+  font-weight: 500;
+  color: #2c3e50;
+  padding: 6px 0;
   transition: color 0.3s;
 }
 
-.nav-links li:hover {
-  color: #1efc01;
+/* Animated underline effect */
+.navbar-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: rgb(26, 188, 156);
+  transition: width 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #1abc9c;
+}
+
+.navbar-links li a:hover::after {
+  width: 100%;
 }
 
 /* CSS for Home Page */
-.home {
-  text-align: center;
-  padding: 40px 20px;
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+  line-height: 1.6;
 }
 
-.home-header h1 {
-  font-size: 28px;
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #eaf7f4, #f0faff);
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #1abc9c;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  font-size: 18px;
+  color: #444;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 14px 24px;
+  background: #1abc9c;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #16a085;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: #3498db;
+}
+
+.btn-secondary:hover {
+  background: #2980b9;
+}
+
+/* Why Choose Us */
+.why-choose {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.why-choose h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+.why-choose h2 span {
+  color: #1abc9c;
+}
+
+.why-item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  border-radius: 12px;
+  background: #fdfdfd;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.why-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.why-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.why-item img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.why-text h3 {
+  font-size: 26px;
   color: #2c3e50;
   margin-bottom: 10px;
 }
 
-.home-header p {
-  font-size: 16px;
-  color: #7f8c8d;
-  margin-bottom: 30px;
+.why-text p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
 }
 
-.home-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.home-btn {
-  display: inline-block;
-  padding: 12px 18px;
-  background-color: #1abc9c;
-  color: #fff;
-  text-decoration: none;
-  font-size: 15px;
-  border-radius: 6px;
-  transition: background 0.3s;
-}
-
-.home-btn:hover {
-  background-color: #16a085;
-}
-
-/* CSS for Doctors Page */
-.doctors {
-  padding: 20px;
+/* Follow Us */
+.follow-us {
+  background: linear-gradient(135deg, #f0faff, #eaf7f4);
   text-align: center;
+  padding: 50px 20px;
 }
 
-.doctors h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+.follow-us h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
   color: #2c3e50;
 }
 
-.doctor-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+.follow-us p {
+  margin-bottom: 25px;
+  font-size: 16px;
+  color: #555;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #1abc9c;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.social-links a:hover {
+  color: #16a085;
+  transform: translateY(-3px);
+}
+
+
+/* CSS for Doctors Page */
+/* Container */
+.doctors {
+  padding: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Title */
+.doctors-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #2a6eb2;
+}
+
+/* Grid */
+.doctor-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Card */
 .doctor-card {
-  background-color: #ecf0f1;
-  border: 1px solid #bdc3c7;
-  border-radius: 6px;
-  padding: 15px;
-  width: 250px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-  text-align: left;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .doctor-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.doctor-card h3 {
-  margin-bottom: 8px;
-  color: #34495e;
+/* Header with avatar + name */
+.doctor-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
+.doctor-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2a6eb2;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Name */
+.doctor-name {
+  font-size: 18px;
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* Details */
 .doctor-card p {
-  margin: 4px 0;
   font-size: 14px;
+  margin: 5px 0;
   color: #555;
 }
 
 /* CSS for Patients Page */
+/* Overall container */
 .patients {
-  padding: 20px;
+  padding: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.patients h2 {
+/* Page title */
+.patients-title {
   text-align: center;
-  margin-bottom: 20px;
-  color: #2c3e50;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #2a6eb2;
 }
 
-.patient-info, .patient-appointments {
-  background: #f8f9fa;
+/* Patient Info Box */
+.patient-info-box {
+  background: #ffffff;
   border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 15px;
-  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-.patient-info h3,
-.patient-appointments h3 {
-  margin-bottom: 10px;
+.patient-info-box h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
   color: #34495e;
 }
 
-.patient-info p,
-.patient-appointments p {
+.patient-info-box p {
   font-size: 14px;
-  margin: 5px 0;
+  margin: 6px 0;
+  color: #555;
 }
+
+/* Appointments Section */
+.appointments-section h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #34495e;
+}
+
+/* Grid for appointment cards */
+.appointments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* Wrapper for AppointmentCard */
+.appointment-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
 
 /* CSS for AppointmentCard Component */
 .appointment-card {
-  background-color: #ecf0f1;
-  border: 1px solid #bdc3c7;
-  border-radius: 6px;
-  padding: 15px;
-  margin: 10px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  padding: 15px 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .appointment-card:hover {
-  transform: scale(1.02);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.appointment-card h3 {
-  margin: 0 0 10px;
-  color: #2c3e50;
-}
-
-.appointment-card p {
-  margin: 4px 0;
-  font-size: 14px;
-  color: #34495e;
-}
-
-
-/* CSS for Footer Component */
-.footer {
-  background-color: #2a6eb2;
-  padding: 15px 20px;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.footer-container {
+/* Header */
+.appointment-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  margin-bottom: 12px;
 }
 
-.footer-copy {
-  color: #ecf0f1;
-  font-size: 14px;
+.appointment-header h3 {
+  font-size: 18px;
+  color: #2c3e50;
   margin: 0;
 }
 
+/* Details */
+.appointment-details p {
+  font-size: 14px;
+  margin: 4px 0;
+  color: #555;
+}
+
+/* Status */
+.status {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-confirmed {
+  background: #e6f9f2;
+  color: #1abc9c;
+}
+
+.status-pending {
+  background: #fff8e6;
+  color: #f39c12;
+}
+
+.status-cancelled {
+  background: #ffeaea;
+  color: #e74c3c;
+}
+
+/* CSS for Appointments Page */
+/* Container */
+.appointments {
+  padding: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Title */
+.appointments-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #2a6eb2;
+}
+
+/* Grid */
+.appointments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Wrapper around card + actions */
+.appointment-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Action Buttons Container */
+.appointment-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Action Buttons */
+.appointment-actions button {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Individual action colors */
+.view-action {
+  background: #3498db;
+}
+.view-action:hover {
+  background: #2980b9;
+}
+
+.track-action {
+  background: #1abc9c;
+}
+.track-action:hover {
+  background: #16a085;
+}
+
+.reschedule-action {
+  background: #f39c12;
+}
+.reschedule-action:hover {
+  background: #d68910;
+}
+
+.cancel-action {
+  background: #e74c3c;
+}
+.cancel-action:hover {
+  background: #c0392b;
+}
+
+/* Empty State */
+.no-appointments {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* CSS for Footer Component */
+/* Footer Base */
+.footer {
+  background: linear-gradient(135deg, #f0faff, #eaf7f4);
+  padding: 50px 20px 20px;
+  border-top: 1px solid rgba(26, 188, 156, 0.4);
+  color: #2c3e50;
+}
+
+/* Container Layout */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 75%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Column Styling */
+.footer-col h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.footer-col h3 span {
+  color: #1abc9c;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.footer-col p {
+  font-size: 15px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Links */
 .footer-links {
   list-style: none;
-  display: flex;
-  gap: 15px;
   padding: 0;
   margin: 0;
 }
 
 .footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links li a {
   text-decoration: none;
-  color: #ecf0f1;
-  font-size: 14px;
+  color: #555;
+  font-size: 15px;
+  transition: color 0.3s, padding-left 0.2s;
+}
+
+.footer-links li a:hover {
+  color: #1abc9c;
+  padding-left: 5px;
+}
+
+/* Social */
+.footer-social {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-social a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1abc9c;
   transition: color 0.3s;
 }
 
-.footer-links li:hover {
-  color: #1efc01;
+.footer-social a:hover {
+  color: #16a085;
+}
+
+/* Bottom Copy */
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 15px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
 }
 

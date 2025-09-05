@@ -22,17 +22,66 @@ export const Doctors = () => {
       specialization: "Orthopedic",
       experience: "12 years",
       contact: "raj.patel@clinic.com"
+    },
+    {
+      id: 3,
+      name: "Dr. Raj Patel",
+      specialization: "Orthopedic",
+      experience: "12 years",
+      contact: "raj.patel@clinic.com"
+    },
+    {
+      id: 3,
+      name: "Dr. Raj Patel",
+      specialization: "Orthopedic",
+      experience: "12 years",
+      contact: "raj.patel@clinic.com"
+    },
+    {
+      id: 3,
+      name: "Dr. Raj Patel",
+      specialization: "Orthopedic",
+      experience: "12 years",
+      contact: "raj.patel@clinic.com"
+    },
+    {
+      id: 3,
+      name: "Dr. Raj Patel",
+      specialization: "Orthopedic",
+      experience: "12 years",
+      contact: "raj.patel@clinic.com"
+    },
+    {
+      id: 3,
+      name: "Dr. Raj Patel",
+      specialization: "Orthopedic",
+      experience: "12 years",
+      contact: "raj.patel@clinic.com"
+    },
+    {
+      id: 3,
+      name: "Dr. Raj Patel",
+      specialization: "Orthopedic",
+      experience: "12 years",
+      contact: "raj.patel@clinic.com"
     }
   ];
 
-  
+
   return <>
     <div className="doctors">
-      <h2>Our Doctors</h2>
+      <h2 className="doctors-title">Our Doctors</h2>
+
       <div className="doctor-list">
-        {sampleDoctors.map(doc => (
+        {sampleDoctors.map((doc) => (
           <div key={doc.id} className="doctor-card">
-            <h3>{doc.name}</h3>
+            <div className="doctor-header">
+              <div className="doctor-avatar">
+                {doc.name.charAt(4).toUpperCase()}
+              </div>
+              <h3 className="doctor-name">{doc.name}</h3>
+            </div>
+
             <p><strong>Specialization:</strong> {doc.specialization}</p>
             <p><strong>Experience:</strong> {doc.experience}</p>
             <p><strong>Contact:</strong> {doc.contact}</p>
@@ -40,6 +89,7 @@ export const Doctors = () => {
         ))}
       </div>
     </div>
+
   </>
 }
 
