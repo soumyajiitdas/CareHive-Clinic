@@ -4,7 +4,7 @@ import AppointmentCard from "../components/AppointmentCard";
 export const Patients = () => {
   // Sample patient info
   const patient = {
-    id: 1,
+    id: 101,
     name: "Alice Johnson",
     age: 29,
     gender: "male",
@@ -14,27 +14,35 @@ export const Patients = () => {
   // Sample recent appointments
   const recentAppointments = [
     {
-      id: 101,
+      id: 1,
       doctorName: "Dr. John Smith",
       patientName: "Alice Johnson",
       date: "2025-09-01",
       time: "10:30 AM",
-      status: "Confirmed"
+      status: "Confirmed",
     },
     {
-      id: 102,
+      id: 2,
       doctorName: "Dr. Emily Brown",
-      patientName: "Alice Johnson",
-      date: "2025-09-05",
+      patientName: "Michael Lee",
+      date: "2025-09-02",
       time: "2:00 PM",
-      status: "Pending"
-    }
+      status: "Pending",
+    },
+    {
+      id: 3,
+      doctorName: "Dr. Raj Patel",
+      patientName: "David Kim",
+      date: "2025-09-03",
+      time: "4:00 PM",
+      status: "Cancelled",
+    },
   ];
 
 
   return <>
-    <div className="patients">
-      <h2 className="patients-title">Patient Dashboard</h2>
+    <div className="page-container">
+      <h2 className="page-title">Patient Dashboard <span>:</span></h2>
 
       {/* Section 1 - Patient Info */}
       <div className="patient-info-box">
@@ -50,9 +58,7 @@ export const Patients = () => {
         {recentAppointments.length > 0 ? (
           <div className="appointments-grid">
             {recentAppointments.map(appt => (
-              <div className="appointment-card" key={appt.id}>
-                <AppointmentCard appointment={appt} />
-              </div>
+              <AppointmentCard appointment={appt} />
             ))}
           </div>
         ) : (

@@ -1,8 +1,50 @@
 * {
-  margin: 0px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
-/*CSS for Navbar Component */
+body {
+  background: #f9f9f9;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+h2 span, h1 span, span {
+  color: #1abc9c;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* CSS for Doctors, Patients & Appointments Pages */
+/* Container */
+.page-container {
+  padding: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.page-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  text-decoration: #1abc9c underline;
+  text-underline-offset: 10px;
+}
+
+/*############################################# CSS for Navbar Component ####################################################################################*/
+/* Container */
 .navbar {
   position: sticky;
   top: 0;
@@ -25,10 +67,6 @@
   font-weight: 700;
   color: #2c3e50;
   letter-spacing: 1px;
-}
-
-.navbar-logo span {
-  color: #1abc9c;
 }
 
 /* Links */
@@ -73,58 +111,22 @@
   width: 100%;
 }
 
-/* CSS for Home Page */
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #fafafa;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #eaf7f4, #f0faff);
-  border-radius: 10px;
-}
-
-.hero h1 {
-  font-size: 42px;
-  color: #2c3e50;
-  margin-bottom: 20px;
-}
-
-.hero h1 span {
-  color: #1abc9c;
-}
-
-.hero p {
-  max-width: 650px;
-  margin: 0 auto 30px;
-  font-size: 18px;
-  color: #444;
-}
-
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
+/*########################################################### CSS for Home Page ####################################################################################*/
+/* Buttons */
 .btn {
-  padding: 14px 24px;
   background: #1abc9c;
   color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 30px;
-  transition: all 0.3s ease;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
 }
 
 .btn:hover {
   background: #16a085;
-  transform: scale(1.05);
 }
 
 .btn-secondary {
@@ -135,36 +137,84 @@ body {
   background: #2980b9;
 }
 
-/* Why Choose Us */
-.why-choose {
-  padding: 60px 20px;
-  background: #fff;
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #f0faff, #eaf7f4);
+  padding: 4rem 2rem;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-img {
+  flex: 1;
   text-align: center;
 }
 
-.why-choose h2 {
-  font-size: 30px;
-  margin-bottom: 40px;
-  color: #2c3e50;
+.hero-img img {
+  max-width: 100%;
+  border-radius: 12px;
 }
 
-.why-choose h2 span {
-  color: #1abc9c;
+/* Why Choose Us */
+.why-choose {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.why-choose h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  text-decoration: #1abc9c underline;
+  text-underline-offset: 10px;
+  margin-bottom: 2.5rem;
 }
 
 .why-item {
   display: flex;
   align-items: center;
-  gap: 30px;
-  margin-bottom: 40px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 30px;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  border: 1px solid #b6f2e6;
   border-radius: 12px;
-  background: #fdfdfd;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: #f5fbfb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-item img {
+  width: 260px;
+  border: 1px solid #b6f2e6;
+  border-radius: 12px;
 }
 
 .why-item.reverse {
@@ -173,85 +223,119 @@ body {
 
 .why-item:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.why-item img {
-  width: 220px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .why-text h3 {
-  font-size: 26px;
   color: #2c3e50;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
 }
 
-.why-text p {
-  font-size: 18px;
-  color: #666;
-  line-height: 1.6;
+/* Services */
+.services {
+  background: #f5fbfb;
+  padding: 4rem 2rem;
+  text-align: center;
 }
+
+.services h2 {
+  margin-bottom: 2rem;
+  text-decoration: #1abc9c underline;
+  text-underline-offset: 10px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.service-card {
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #1abc9c;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background: #eafaf7;
+}
+
 
 /* Follow Us */
 .follow-us {
   background: linear-gradient(135deg, #f0faff, #eaf7f4);
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.follow-us h2 {
-  font-size: 26px;
-  margin-bottom: 10px;
   color: #2c3e50;
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-.follow-us p {
-  margin-bottom: 25px;
-  font-size: 16px;
-  color: #555;
+.follow-inner h2 {
+  margin-bottom: 1rem;
+  text-decoration: #1abc9c underline;
+  text-underline-offset: 10px;
+}
+
+.newsletter {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.newsletter input {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  width: 350px;
+}
+
+.newsletter button {
+  background: #1abc9c;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.newsletter button:hover {
+  background: #16a085;
 }
 
 .social-links {
+  margin-top: 1.5rem;
   display: flex;
+  gap: 1rem;
   justify-content: center;
-  gap: 25px;
   flex-wrap: wrap;
 }
 
 .social-links a {
-  color: #1abc9c;
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s, transform 0.2s;
+  background: #3498db;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  color: #fff;
+  transition: background 0.3s;
 }
 
 .social-links a:hover {
-  color: #16a085;
-  transform: translateY(-3px);
+  background: #1abc9c;
 }
 
-
-/* CSS for Doctors Page */
-/* Container */
-.doctors {
-  padding: 25px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* Title */
-.doctors-title {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 25px;
-  color: #2a6eb2;
-}
-
+/*####################################################### CSS for Doctors Page ##################################################################################### */
 /* Grid */
 .doctor-list {
   display: grid;
@@ -286,7 +370,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #2a6eb2;
+  background: #1abc9c;
   color: #fff;
   font-weight: bold;
   font-size: 16px;
@@ -310,23 +394,7 @@ body {
   color: #555;
 }
 
-/* CSS for Patients Page */
-/* Overall container */
-.patients {
-  padding: 25px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Page title */
-.patients-title {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 25px;
-  color: #2a6eb2;
-}
-
+/*############################################################# CSS for Patients Page #############################################################################*/
 /* Patient Info Box */
 .patient-info-box {
   background: #ffffff;
@@ -349,34 +417,11 @@ body {
   color: #555;
 }
 
-/* Appointments Section */
-.appointments-section h3 {
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #34495e;
-}
-
-/* Grid for appointment cards */
-.appointments-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-/* Wrapper for AppointmentCard */
-.appointment-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-
-/* CSS for AppointmentCard Component */
+/*############################################################## CSS for AppointmentCard Component #################################################################*/
+/* Card structure */
 .appointment-card {
   background: #ffffff;
-  border: 1px solid #e1e1e1;
+  border: 0px solid #e1e1e1;
   border-radius: 10px;
   padding: 15px 18px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -398,7 +443,7 @@ body {
 
 .appointment-header h3 {
   font-size: 18px;
-  color: #2c3e50;
+  color: #1abc9c;
   margin: 0;
 }
 
@@ -433,84 +478,81 @@ body {
   color: #e74c3c;
 }
 
-/* CSS for Appointments Page */
-/* Container */
-.appointments {
-  padding: 25px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* Title */
-.appointments-title {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 25px;
-  color: #2a6eb2;
-}
-
+/*######################################################### CSS for Appointments Page #############################################################################*/
 /* Grid */
 .appointments-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  gap: 24px;
+  margin-top: 20px;
 }
 
-/* Wrapper around card + actions */
+/* Wrapper around card */
 .appointment-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.appointment-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
 /* Action Buttons Container */
 .appointment-actions {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: 10px;
+  margin-top: auto;
 }
 
 /* Action Buttons */
 .appointment-actions button {
   flex: 1;
-  padding: 8px 10px;
-  font-size: 13px;
+  padding: 10px 12px;
+  font-size: 14px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.25s ease;
   font-weight: 500;
   color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-/* Individual action colors */
+/* Individual action colors with softer tones */
 .view-action {
-  background: #3498db;
+  background: #5dade2;
 }
 .view-action:hover {
-  background: #2980b9;
+  background: #3498db;
 }
 
 .track-action {
-  background: #1abc9c;
+  background: #48c9b0;
 }
 .track-action:hover {
-  background: #16a085;
+  background: #1abc9c;
 }
 
 .reschedule-action {
-  background: #f39c12;
+  background: #f5b041;
 }
 .reschedule-action:hover {
-  background: #d68910;
+  background: #f39c12;
 }
 
 .cancel-action {
-  background: #e74c3c;
+  background: #ec7063;
 }
 .cancel-action:hover {
-  background: #c0392b;
+  background: #e74c3c;
 }
 
 /* Empty State */
@@ -518,10 +560,10 @@ body {
   text-align: center;
   font-size: 16px;
   color: #555;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
-/* CSS for Footer Component */
+/*############################################################ CSS for Footer Component ##############################################################################*/
 /* Footer Base */
 .footer {
   background: linear-gradient(135deg, #f0faff, #eaf7f4);

@@ -69,8 +69,8 @@ export const Doctors = () => {
 
 
   return <>
-    <div className="doctors">
-      <h2 className="doctors-title">Our Doctors</h2>
+    <div className="page-container">
+      <h2 className="page-title">Our Doctors <span>:</span></h2>
 
       <div className="doctor-list">
         {sampleDoctors.map((doc) => (
