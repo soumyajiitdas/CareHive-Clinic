@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 
 import './App.css';
 import { Navbar } from './components/Navbar';
@@ -13,13 +13,22 @@ import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // Check if token exists in localStorage for persistence
+  const [isLoggedIn, setIsLoggedIn] = useState(() => !!localStorage.getItem("token"));
 
-  const handleLoginSuccess = () => setIsLoggedIn(true);
+  const handleLoginSuccess = (token) => {
+    localStorage.setItem("token", token); // save JWT
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+  };
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Home />} />

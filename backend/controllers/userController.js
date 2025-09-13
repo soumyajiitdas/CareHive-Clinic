@@ -19,29 +19,34 @@ exports.registerUser = async (req, res) => {
         // Create User
         const user = await User.create({ name, email, passwordHash: hash, role });
 
-        // Automatically create corresponding Doctor or Patient profile
+        // Automatically create Doctor or Patient profile with provided data
         if (role === "doctor") {
+            const { specialization, experienceYears = 0, qualification, clinicAddress = "" } = req.body;
+
             await Doctor.create({
                 userId: user._id,
-                specialization: "",
-                qualification: "",
-                experienceYears: 0,
-                clinicAddress: "",
-                availableSlots: []
+                specialization,
+                experienceYears,
+                qualification,
+                clinicAddress,
+                availableSlots: [],
             });
         } else if (role === "patient") {
+            const { age, gender, phone, address = "", medicalHistory = [] } = req.body;
+
             await Patient.create({
                 userId: user._id,
-                age: 0,
-                gender: "other",
-                phone: "",
-                address: "",
-                medicalHistory: []
+                age,
+                gender,
+                phone,
+                address,
+                medicalHistory,
             });
         }
 
         res.status(201).json({ message: "User registered successfully", user });
     } catch (err) {
+        console.error("Registration error:", err);
         res.status(500).json({ error: err.message });
     }
 };
@@ -62,4 +67,5 @@ exports.loginUser = async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 };
+
 

@@ -110,6 +110,14 @@ a {
 .navbar-links li a:hover::after {
   width: 100%;
 }
+.navbar-links button {
+  background: transparent;
+  color: #1abc9c;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
 
 /*########################################################### CSS for Home Page ####################################################################################*/
 /* Buttons */
@@ -645,7 +653,142 @@ a {
   color: #1abc9c; /* Accent color for messages */
 }
 
-/*############################################################ CSS for Footer Component ###########################################################################*/
+/*##################################################### CSS for Login Page #############################################################*/
+/* Login Page Container */
+.login-container {
+  max-width: 50%;
+  margin: 60px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form */
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input Fields */
+.login-container input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+  background: #f9f9f9;
+  box-sizing: border-box;
+}
+
+/* Login Button */
+.login-container button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #48c9b0; /* matches track-action button */
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: background 0.25s ease;
+}
+
+.login-container button:hover {
+  background-color: #1abc9c;
+}
+
+/* Register Link */
+.login-container p {
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+}
+
+.login-container p a {
+  color: #48c9b0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-container p a:hover {
+  text-decoration: underline;
+}
+
+/*##################################################### CSS for Register Page ############################################################*/
+/* Register Page Container */
+.register-container {
+  max-width: 50%;
+  margin: 60px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form */
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input Fields and Selects */
+.register-container input,
+.register-container select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+  background: #f9f9f9;
+  box-sizing: border-box;
+}
+
+/* Submit Button */
+.register-container button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #48c9b0; /* matches track-action button */
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: background 0.25s ease;
+}
+
+.register-container button:hover {
+  background-color: #1abc9c;
+}
+
+/* Optional link paragraph for login */
+.register-container p {
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+}
+
+.register-container p a {
+  color: #48c9b0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-container p a:hover {
+  text-decoration: underline;
+}
+
+/*################################################### CSS for Footer Component ##########################################################*/
 /* Footer Base */
 .footer {
   background: linear-gradient(135deg, #f0faff, #eaf7f4);
