@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const patientSchema = new mongoose.Schema({
     userId: {
-        type: Number,                            // foreign key User
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
         required: true,
         unique: true
     },
@@ -10,7 +11,7 @@ const patientSchema = new mongoose.Schema({
     gender: { type: String, enum: ["male", "female", "other"], required: true },
     phone: { type: String, required: true },
     address: { type: String },
-    medicalHistory: [{ type: String }]          // list of past conditions/notes
+    medicalHistory: [{ type: String }]
 }, { timestamps: true });
 
 module.exports = mongoose.model("Patient", patientSchema);

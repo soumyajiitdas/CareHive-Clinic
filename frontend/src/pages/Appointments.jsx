@@ -1,5 +1,6 @@
 import React from 'react';
 import AppointmentCard from "../components/AppointmentCard";
+import AppointmentForm from '../components/AppointmentForm';
 
 export const Appointments = () => {
   // Sample appointment data
@@ -53,6 +54,7 @@ export const Appointments = () => {
       ) : (
         <p className="no-appointments">No appointments available.</p>
       )}
+      <AppointmentForm/>
     </div>
 
   </>

@@ -1,6 +1,6 @@
 const Doctor = require("../models/Doctor");
 
-// create new doctor (temp)
+// create new doctor
 exports.createDoctor = async (req, res) => {
     try {
         const newDoctor = new Doctor(req.body);

@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const doctorSchema = new mongoose.Schema({
     userId: {
-        type: Number,                             // foreign key User
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
         required: true,
         unique: true
     },
@@ -10,7 +11,7 @@ const doctorSchema = new mongoose.Schema({
     experienceYears: { type: Number, default: 0 },
     qualification: { type: String, required: true },
     clinicAddress: { type: String },
-    availableSlots: [{ type: Date }]               // available appointment times arr
+    availableSlots: [{ type: Date }]
 }, { timestamps: true });
 
 module.exports = mongoose.model("Doctor", doctorSchema);

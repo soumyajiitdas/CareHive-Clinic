@@ -563,6 +563,67 @@ a {
   margin-top: 30px;
 }
 
+/*################################################################### CSS for Appointment Form Component ##############################################################################*/
+.appointment-form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1e1e2f;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.appointment-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.appointment-form label {
+  font-weight: bold;
+}
+
+.appointment-form select,
+.appointment-form input,
+.appointment-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2c2c3e;
+  color: #f5f5f5;
+}
+
+.appointment-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.appointment-form button {
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.appointment-form button:hover {
+  background-color: #45a049;
+}
+
+.form-message {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
 /*############################################################ CSS for Footer Component ##############################################################################*/
 /* Footer Base */
 .footer {
