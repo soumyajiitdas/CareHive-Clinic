@@ -391,6 +391,7 @@ a {
 /* Name */
 .doctor-name {
   font-size: 18px;
+  font-weight: bold;
   color: #2c3e50;
   margin: 0;
 }
@@ -656,7 +657,7 @@ a {
 /*##################################################### CSS for Login Page #############################################################*/
 /* Login Page Container */
 .login-container {
-  max-width: 50%;
+  max-width: 40%;
   margin: 60px auto;
   padding: 24px;
   background: #ffffff;

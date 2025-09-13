@@ -22,16 +22,16 @@ export const Doctors = () => {
       <div className="doctor-list">
         {doctors.map((doc) => (
           <div key={doc._id} className="doctor-card">
-            {/* <div className="doctor-header">
+            <div className="doctor-header">
               <div className="doctor-avatar">
-                {doc.name.charAt(4).toUpperCase()}
+                {doc.userId.name.charAt(4).toUpperCase()}
               </div>
-              <h3 className="doctor-name">{doc.name}</h3>
-            </div> */}
+              <h3 className="doctor-name">{doc.userId.name}</h3>
+            </div>
 
             <p><strong>Specialization:</strong> {doc.specialization}</p>
-            <p><strong>Experience:</strong> {doc.experienceYears}</p>
-            <p><strong>Experience:</strong> {doc.qualification}</p>
+            <p><strong>Experience:</strong> {doc.experienceYears} years</p>
+            <p><strong>Qualification:</strong> {doc.qualification}</p>
             <p><strong>Contact:</strong> {doc.clinicAddress}</p>
           </div>
         ))}
@@ -40,4 +40,3 @@ export const Doctors = () => {
 
   </>
 }
-

@@ -85,17 +85,18 @@ export default function Register() {
 
     return (
         <div className="register-container">
+        <h2 className="page-title">Registration Form <span>:</span></h2>
         <form onSubmit={handleSubmit}>
             <input
                 name="name"
-                placeholder="Name"
+                placeholder="Enter your name"
                 value={formData.name}
                 onChange={handleChange}
                 required
             />
             <input
                 name="email"
-                placeholder="Email"
+                placeholder="Enter email address"
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -103,7 +104,7 @@ export default function Register() {
             />
             <input
                 name="password"
-                placeholder="Password"
+                placeholder="Create password"
                 type="password"
                 value={formData.password}
                 onChange={handleChange}
@@ -118,7 +119,7 @@ export default function Register() {
                 <>
                     <input
                         name="age"
-                        placeholder="Age"
+                        placeholder="Enter your age"
                         type="number"
                         value={formData.age}
                         onChange={handleChange}
@@ -131,20 +132,20 @@ export default function Register() {
                     </select>
                     <input
                         name="phone"
-                        placeholder="Phone"
+                        placeholder="Enter phone number"
                         value={formData.phone}
                         onChange={handleChange}
                         required
                     />
                     <input
                         name="address"
-                        placeholder="Address"
+                        placeholder="Enter your address"
                         value={formData.address}
                         onChange={handleChange}
                     />
                     <input
                         name="medicalHistory"
-                        placeholder="Medical History (comma separated)"
+                        placeholder="Enter your Medical History (comma separated, if any)"
                         value={formData.medicalHistory}
                         onChange={handleChange}
                     />
@@ -153,28 +154,28 @@ export default function Register() {
                 <>
                     <input
                         name="specialization"
-                        placeholder="Specialization"
+                        placeholder="Enter Specialization"
                         value={formData.specialization}
                         onChange={handleChange}
                         required
                     />
                     <input
                         name="experienceYears"
-                        placeholder="Years of Experience"
+                        placeholder="Your Years of Experience"
                         type="number"
                         value={formData.experienceYears}
                         onChange={handleChange}
                     />
                     <input
                         name="qualification"
-                        placeholder="Qualification"
+                        placeholder="Your Qualification"
                         value={formData.qualification}
                         onChange={handleChange}
                         required
                     />
                     <input
                         name="clinicAddress"
-                        placeholder="Clinic Address"
+                        placeholder="Your Clinic Address"
                         value={formData.clinicAddress}
                         onChange={handleChange}
                     />

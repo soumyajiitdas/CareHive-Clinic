@@ -1,80 +1,81 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function AppointmentForm({ token, patientId }) {
+const AppointmentForm = () => {
     const [doctors, setDoctors] = useState([]);
-    const [doctorId, setDoctorId] = useState("");
-    const [dateTime, setDateTime] = useState("");
-    const [reason, setReason] = useState("");
-    const [message, setMessage] = useState("");
+    const [formData, setFormData] = useState({
+        doctorId: "",
+        patientName: "",
+        date: "",
+        time: "",
+    });
 
     useEffect(() => {
-        axios
-            .get("/api/doctors")
-            .then((res) => setDoctors(res.data))
-            .catch((err) => console.error(err));
+        axios.get("http://localhost:8000/api/doctors/")
+            .then((res) => {
+                setDoctors(res.data);
+            })
+            .catch((err) => {
+                console.error("Error fetching doctors:", err);
+            });
     }, []);
+
+    const handleChange = (e) =>
+        setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setMessage("");
-
         try {
-            const res = await axios.post(
-                "/api/appointments/book",
-                { patientId, doctorId, dateTime, reason },
-                { headers: { Authorization: `Bearer ${token}` } }
-            );
-            setMessage("✅ Appointment booked successfully!");
-            setDoctorId("");
-            setDateTime("");
-            setReason("");
-        } catch (error) {
-            setMessage(error.response?.data?.message || "❌ Booking failed");
+            await axios.post("http://localhost:8000/api/appointments/book", formData);
+            alert("✅ Appointment created successfully!");
+            // Optionally reset form or refresh list
+        } catch (err) {
+            alert(err.response?.data?.message || "❌ Failed to create appointment");
         }
     };
 
     return (
-        <div className="appointment-form-container">
-            <h2>Book an Appointment</h2>
+        <form className="appointment-form" onSubmit={handleSubmit}>
 
-            <form className="appointment-form" onSubmit={handleSubmit}>
-                <label>Choose Doctor</label>
-                <select
-                    value={doctorId}
-                    onChange={(e) => setDoctorId(e.target.value)}
-                    required
-                >
-                    <option value="">-- Select a Doctor --</option>
-                    {doctors.map((doc) => (
-                        <option key={doc._id} value={doc._id}>
-                            {doc.userId.name} - {doc.specialization}
-                        </option>
-                    ))}
-                </select>
+            <label>Select Doctor:</label>
+            <select
+                name="doctorId"
+                value={formData.doctorId}
+                onChange={handleChange}
+                required
+            >
+                <option value="">-- Select a Doctor --</option>
+                {doctors.map((doc) => (
+                    <option key={doc._id} value={doc._id}>
+                        {doc.userId?.name || "Unnamed Doctor"}
+                    </option>
+                ))}
+            </select>
 
-                <label>Date & Time</label>
-                <input
-                    type="datetime-local"
-                    value={dateTime}
-                    onChange={(e) => setDateTime(e.target.value)}
-                    required
-                />
-
-                <label>Reason</label>
-                <textarea
-                    value={reason}
-                    onChange={(e) => setReason(e.target.value)}
-                    placeholder="Describe your reason..."
-                    required
-                ></textarea>
-
-                <button type="submit">Book Appointment</button>
-            </form>
-
-            {message && <p className="form-message">{message}</p>}
-        </div>
+            <input
+                name="patientName"
+                placeholder="Patient Name"
+                value={formData.patientName}
+                onChange={handleChange}
+                required
+            />
+            <input
+                type="date"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+                required
+            />
+            <input
+                type="time"
+                name="time"
+                value={formData.time}
+                onChange={handleChange}
+                required
+            />
+            <button type="submit">Create Appointment</button>
+        </form>
     );
-}
+};
 
 export default AppointmentForm;

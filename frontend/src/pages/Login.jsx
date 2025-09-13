@@ -32,6 +32,7 @@ export default function Login({ onLoginSuccess }) {
 
     return (
         <div className="login-container">
+        <h2 className="page-title">Login Form <span>:</span></h2>
             <form onSubmit={handleSubmit}>
                 <input
                     name="email"
