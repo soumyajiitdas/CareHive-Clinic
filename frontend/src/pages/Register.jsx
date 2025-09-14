@@ -18,7 +18,7 @@ export default function Register() {
         experienceYears: "",
         qualification: "",
         clinicAddress: "",
-        availableSlots: "", // New field for doctors
+        availableSlots: "",
     });
 
     const handleChange = (e) => {
@@ -33,7 +33,6 @@ export default function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Prepare payload based on role
         const payload =
             role === "patient"
                 ? {
@@ -83,7 +82,7 @@ export default function Register() {
             });
             setRole("patient");
         } catch (err) {
-            alert(err.response?.data?.message || "Registration failed");
+            alert(err.response?.data?.message || "❌ Registration failed");
         }
     };
 

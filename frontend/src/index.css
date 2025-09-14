@@ -15,7 +15,7 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
-h2 span, h1 span, span {
+span {
   color: #1abc9c;
 }
 
@@ -39,6 +39,28 @@ a {
   font-weight: bold;
   margin-bottom: 25px;
   color: #2c3e50;
+  text-decoration: #1abc9c underline;
+  text-underline-offset: 10px;
+}
+
+/* Protected Route*/
+.pRoute {
+  max-width: 100%;
+  padding: 170px;
+  max-height: 100%;
+  background-color: #e1f8f3b1;
+}
+.pRoute h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+.pRoute p {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 400;
+  color: #1abc9c;
   text-decoration: #1abc9c underline;
   text-underline-offset: 10px;
 }
@@ -119,7 +141,7 @@ a {
   cursor: pointer;
 }
 
-/*########################################################### CSS for Home Page ####################################################################################*/
+/*################################################## CSS for Home Page ##########################################################################*/
 /* Buttons */
 .btn {
   background: #1abc9c;
@@ -343,7 +365,7 @@ a {
   background: #1abc9c;
 }
 
-/*####################################################### CSS for Doctors Page ##################################################################################### */
+/*################################################ CSS for Doctors Page ########################################################################## */
 /* Grid */
 .doctor-list {
   display: grid;
@@ -403,7 +425,7 @@ a {
   color: #555;
 }
 
-/*############################################################# CSS for Patients Page #############################################################################*/
+/*###################################################### CSS for Patients Page #####################################################################*/
 /* Patient Info Box */
 .patient-info-box {
   background: #ffffff;
@@ -426,7 +448,7 @@ a {
   color: #555;
 }
 
-/*############################################################## CSS for AppointmentCard Component #################################################################*/
+/*####################################################### CSS for AppointmentCard Component ##########################################################*/
 /* Card structure */
 .appointment-card {
   background: #ffffff;
@@ -487,7 +509,7 @@ a {
   color: #e74c3c;
 }
 
-/*######################################################### CSS for Appointments Page #############################################################################*/
+/*###################################################### CSS for Appointments Page #################################################################*/
 /* Grid */
 .appointments-grid {
   display: grid;
@@ -573,7 +595,7 @@ a {
   margin-top: 30px;
 }
 
-/*###################################################### CSS for Appointment Form Component ##################################################################*/
+/*#################################################### CSS for Appointment Form Component ########################################################*/
 .appointment-form-container {
   max-width: 100%;
   margin: 40px auto;

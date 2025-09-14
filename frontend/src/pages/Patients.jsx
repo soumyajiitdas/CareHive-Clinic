@@ -74,7 +74,7 @@ export const Patients = () => {
             ))}
           </div>
         ) : (
-          <p>No appointments found.</p>
+          <p className="no-appointments">No appointments found.</p>
         )}
       </div>
     </div>

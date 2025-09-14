@@ -21,12 +21,12 @@ export default function Login({ onLoginSuccess }) {
             // Update App state
             onLoginSuccess(token);
 
-            alert("Login successful");
+            alert("Login successful! 🎉");
 
             // Redirect to home
             navigate("/");
         } catch (err) {
-            alert(err.response?.data?.message || "Login failed");
+            alert(err.response?.data?.message || "❌ Login failed!");
         }
     };
 
