@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import API from "../services/Api";
 import AppointmentCard from "../components/AppointmentCard";
 
 export const Patients = () => {
@@ -11,33 +12,18 @@ export const Patients = () => {
     email: "alice.johnson@example.com"
   };
 
-  // Sample recent appointments
-  const recentAppointments = [
-    {
-      id: 1,
-      doctorName: "Dr. John Smith",
-      patientName: "Alice Johnson",
-      date: "2025-09-01",
-      time: "10:30 AM",
-      status: "Confirmed",
-    },
-    {
-      id: 2,
-      doctorName: "Dr. Emily Brown",
-      patientName: "Michael Lee",
-      date: "2025-09-02",
-      time: "2:00 PM",
-      status: "Pending",
-    },
-    {
-      id: 3,
-      doctorName: "Dr. Raj Patel",
-      patientName: "David Kim",
-      date: "2025-09-03",
-      time: "4:00 PM",
-      status: "Cancelled",
-    },
-  ];
+  // recent appointments display
+  const [appointments, setAppointments] = useState([]);
+
+  useEffect(() => {
+    API.get("/appointments/")
+      .then((res) => {
+        setAppointments(res.data);
+      })
+      .catch((err) => {
+        console.error("Error fetching appointments:", err);
+      });
+  }, []);
 
 
   return <>
@@ -55,10 +41,12 @@ export const Patients = () => {
       {/* Section 2 - Appointments */}
       <div className="appointments-section">
         <h3>Recent Appointments</h3>
-        {recentAppointments.length > 0 ? (
+        {appointments.length > 0 ? (
           <div className="appointments-grid">
-            {recentAppointments.map(appt => (
+            {appointments.map(appt => (
+              <div key={appt._id}>
               <AppointmentCard appointment={appt} />
+              </div>
             ))}
           </div>
         ) : (

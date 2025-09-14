@@ -56,7 +56,7 @@ const AppointmentForm = () => {
 
     return (
         <form className="appointment-form" onSubmit={handleSubmit}>
-
+            <h2 className="page-title">Appointment Form<span>:</span></h2>
             <label>Select Doctor:</label>
             <select
                 name="doctorId"

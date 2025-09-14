@@ -494,6 +494,7 @@ a {
   grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
   gap: 24px;
   margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 /* Wrapper around card */
