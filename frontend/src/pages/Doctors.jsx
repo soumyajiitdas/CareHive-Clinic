@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import API from '../services/Api';
 
 export const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
   
   useEffect(()=>{
-    axios.get("http://localhost:8000/api/doctors/")
+    API.get("/doctors")
     .then((res)=>{
       setDoctors(res.data);
     })

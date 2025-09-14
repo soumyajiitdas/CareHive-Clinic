@@ -18,6 +18,7 @@ export default function Register() {
         experienceYears: "",
         qualification: "",
         clinicAddress: "",
+        availableSlots: "", // New field for doctors
     });
 
     const handleChange = (e) => {
@@ -57,6 +58,9 @@ export default function Register() {
                     experienceYears: Number(formData.experienceYears || 0),
                     qualification: formData.qualification,
                     clinicAddress: formData.clinicAddress,
+                    availableSlots: formData.availableSlots
+                        ? formData.availableSlots.split(",").map((s) => new Date(s.trim()).toISOString())
+                        : [],
                 };
 
         try {
@@ -179,6 +183,13 @@ export default function Register() {
                         value={formData.clinicAddress}
                         onChange={handleChange}
                     />
+                    <textarea
+                        name="availableSlots"
+                        placeholder="Available Slots (comma-separated ISO 8601 dates, e.g., 2025-09-14T09:00:00.000Z, 2025-09-14T10:00:00.000Z)"
+                        value={formData.availableSlots}
+                        onChange={handleChange}
+                        rows="5"
+                    ></textarea>
                 </>
             )}
 

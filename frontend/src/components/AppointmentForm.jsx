@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import API from "../services/Api";
+import { jwtDecode } from "jwt-decode";
 
 const AppointmentForm = () => {
     const [doctors, setDoctors] = useState([]);
     const [formData, setFormData] = useState({
         doctorId: "",
-        patientName: "",
         date: "",
         time: "",
+        reason: "",
     });
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/doctors/")
+        API.get("/doctors")
             .then((res) => {
                 setDoctors(res.data);
             })
@@ -25,11 +26,30 @@ const AppointmentForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert("Please log in to book an appointment.");
+            return;
+        }
+
         try {
-            await axios.post("http://localhost:8000/api/appointments/book", formData);
-            alert("✅ Appointment created successfully!");
-            // Optionally reset form or refresh list
+            const decodedToken = jwtDecode(token);
+            const patientId = decodedToken.id; // Assuming 'id' in token is the patient's userId
+
+            const dateTime = new Date(`${formData.date}T${formData.time}`).toISOString();
+
+            const appointmentData = {
+                doctorId: formData.doctorId,
+                patientId: patientId,
+                dateTime: dateTime,
+                reason: formData.reason,
+            };
+
+            const res = await API.post("/appointments/book", appointmentData);
+            alert("✅ Appointment booked!");
+            // Optionally clear form or refresh appointments list
         } catch (err) {
+            console.error("Error booking appointment:", err);
             alert(err.response?.data?.message || "❌ Failed to create appointment");
         }
     };
@@ -52,12 +72,12 @@ const AppointmentForm = () => {
                 ))}
             </select>
 
+            
             <input
-                name="patientName"
-                placeholder="Patient Name"
-                value={formData.patientName}
+                name="reason"
+                placeholder="Reason for Appointment (Optional)"
+                value={formData.reason}
                 onChange={handleChange}
-                required
             />
             <input
                 type="date"

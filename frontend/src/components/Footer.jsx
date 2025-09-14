@@ -30,7 +30,7 @@ export const Footer = () => {
         {/* Column 3 - Contact & Social */}
         <div className="footer-col">
           <h4>Contact Us</h4>
-          <p>Email: support@clinicapp.com</p>
+          <p>Email: support@carehiveclinic.com</p>
           <p>Phone: +91 00000 00000</p>
           <div className="footer-social">
             <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>

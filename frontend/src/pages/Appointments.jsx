@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../services/Api";
 import AppointmentCard from "../components/AppointmentCard";
 import AppointmentForm from '../components/AppointmentForm';
 
@@ -7,7 +7,7 @@ export const Appointments = () => {
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/api/appointments/")
+    API.get("/appointments/")
       .then((res) => {
         setAppointments(res.data);
       })

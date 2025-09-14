@@ -1,22 +1,29 @@
 const Appointment = require("../models/Appointment");
 const Doctor = require("../models/Doctor");
+const Patient = require("../models/Patient");
 
 // book appointment
 exports.bookAppointment = async (req, res) => {
     try {
-        const { patientId, doctorId, dateTime, reason } = req.body;
+        const { doctorId, dateTime, reason } = req.body;
+        const userId = req.user.id; 
+
+        const patient = await Patient.findOne({ userId });
+        if (!patient) return res.status(404).json({ message: "Patient not found" });
+        const patientId = patient._id;
 
         // check doctor availability
         const doctor = await Doctor.findById(doctorId);
         if (!doctor) return res.status(404).json({ message: "Doctor not found" });
 
-        if (!doctor.availableSlots.includes(new Date(dateTime).toISOString())) {
-            return res.status(400).json({ message: "Doctor not available at this time" });
-        }
+        // if (!doctor.availableSlots.includes(new Date(dateTime).toISOString())) {
+        //     return res.status(400).json({ message: "Doctor not available at this time" });
+        // }
 
         const appointment = await Appointment.create({ patientId, doctorId, dateTime, reason });
         res.status(201).json({ message: "Appointment booked", appointment });
     } catch (err) {
+        console.error("Book Appointment Error:", err);
         res.status(500).json({ error: err.message });
     }
 };
