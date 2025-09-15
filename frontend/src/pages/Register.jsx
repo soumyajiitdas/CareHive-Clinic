@@ -1,5 +1,5 @@
 import { useState } from "react";
-import API from "../services/api";
+import API from "../services/Api";
 
 export default function Register() {
     const [role, setRole] = useState("patient");

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "http://localhost:8000/api", // your backend URL
+    baseURL: "https://api-carehiveclinic.onrender.com/api",
 });
 
 // Add auth token automatically if present
