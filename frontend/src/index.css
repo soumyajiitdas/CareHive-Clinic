@@ -344,7 +344,7 @@ a {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
-  color: #fff;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
@@ -1202,59 +1202,171 @@ a {
 .doctor-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 28px;
+  margin-top: 24px;
 }
 
 /* Card */
 .doctor-card {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 18px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--secondary-cyan));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .doctor-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(14, 165, 233, 0.12), 0 4px 8px rgba(14, 165, 233, 0.08);
+  border-color: var(--primary-blue);
+  background: #ffffff;
+}
+
+.doctor-card:hover::before {
+  opacity: 1;
 }
 
 /* Header with avatar + name */
 .doctor-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--gray-200);
 }
 
 .doctor-avatar {
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary-blue), var(--secondary-cyan));
   color: #fff;
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.35);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.doctor-avatar::after {
+  content: '👨‍⚕️';
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Name */
 .doctor-name {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 700;
   color: var(--gray-900);
   margin: 0;
+  line-height: 1.3;
+  flex: 1;
 }
 
 /* Details */
 .doctor-card p {
   font-size: 14px;
-  margin: 5px 0;
-  color: #555;
+  margin: 12px 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.doctor-card p strong {
+  color: var(--gray-700);
+  font-weight: 600;
+  min-width: 120px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.doctor-card p strong::before {
+  content: '•';
+  color: var(--primary-blue);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+/* Add hover effect to details */
+.doctor-card:hover p {
+  color: var(--text-primary);
+}
+
+/* Empty state for doctors */
+.no-doctors {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-top: 40px;
+  padding: 60px 20px;
+  background: var(--gray-50);
+  border-radius: 16px;
+  border: 2px dashed var(--gray-300);
+  grid-column: 1 / -1;
+}
+
+/* Book Appointment Button */
+.btn-book-appointment {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
+}
+
+.btn-book-appointment:hover {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.35);
+}
+
+.btn-book-appointment:active {
+  transform: translateY(0);
 }
 
 /* ================================== RESPONSIVE DOCTORS PAGE ================================== */
@@ -1327,20 +1439,366 @@ a {
   color: #555;
 }
 
+/*###################################################### CSS for Patients Page #####################################################################*/
+/* Patient Info Box */
+.patient-info-box {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 2px solid var(--gray-200);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.patient-info-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--secondary-cyan), var(--accent-teal));
+}
+
+.patient-info-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15);
+  border-color: var(--primary-blue);
+}
+
+.patient-info-box h3 {
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: var(--gray-900);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.patient-info-box h3::before {
+  content: '👤';
+  font-size: 28px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-cyan));
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.2);
+}
+
+.patient-info-box p {
+  font-size: 16px;
+  margin: 14px 0;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(14, 165, 233, 0.03);
+  transition: all 0.2s ease;
+}
+
+.patient-info-box p:hover {
+  background: rgba(14, 165, 233, 0.08);
+  transform: translateX(5px);
+}
+
+.patient-info-box p strong {
+  color: var(--primary-blue);
+  font-weight: 600;
+  min-width: 140px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.patient-info-box p strong::before {
+  font-size: 18px;
+}
+
+.patient-info-box p:nth-child(2) strong::before {
+  content: '📋';
+}
+
+.patient-info-box p:nth-child(3) strong::before {
+  content: '🎂';
+}
+
+.patient-info-box p:nth-child(4) strong::before {
+  content: '📞';
+}
+
+.patient-info-box p:nth-child(5) strong::before {
+  content: '📍';
+}
+
+.patient-info-box p:nth-child(6) strong::before {
+  content: '🏥';
+}
+
+/* Appointments Section Styling */
+.appointments-section {
+  margin-top: 30px;
+}
+
+.appointments-section h3 {
+  font-size: 24px;
+  color: var(--gray-900);
+  font-weight: 700;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.appointments-section h3::before {
+  content: '📅';
+  font-size: 28px;
+  background: linear-gradient(135deg, var(--secondary-cyan), var(--accent-teal));
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(6, 182, 212, 0.2);
+}
+
+/* Enhanced Appointment Cards for Patient Page */
+.appointments-section .appointment-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+  border: 2px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.appointments-section .appointment-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary-blue), var(--secondary-cyan));
+}
+
+.appointments-section .appointment-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(14, 165, 233, 0.15);
+  border-color: var(--primary-blue);
+}
+
+.appointments-section .appointment-header h3 {
+  font-size: 20px;
+  color: var(--primary-blue);
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-weight: 700;
+}
+
+.appointments-section .appointment-header h3::before {
+  display: none;
+}
+
+.appointments-section .status {
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.3px;
+}
+
+.appointments-section .status-booked {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1e40af;
+}
+
+.appointments-section .status-completed {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+}
+
+.appointments-section .status-canceled {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+}
+
+.appointments-section .appointment-details p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.appointments-section .appointment-details p strong {
+  color: var(--gray-900);
+  font-weight: 600;
+  min-width: 80px;
+}
+
+
+/* ================================== RESPONSIVE PATIENTS PAGE ================================== */
+@media (max-width: 768px) {
+  .patient-info-box {
+    padding: 24px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+  }
+
+  .patient-info-box h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .patient-info-box h3::before {
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+  }
+
+  .patient-info-box p {
+    font-size: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .patient-info-box p strong {
+    min-width: auto;
+  }
+
+  .appointments-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .appointments-section h3::before {
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+  }
+
+  .appointments-section .appointment-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .appointments-section .appointment-header h3 {
+    font-size: 18px;
+  }
+
+  .appointments-section .appointment-details p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .patient-info-box {
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+  }
+
+  .patient-info-box h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .patient-info-box h3::before {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .patient-info-box p {
+    font-size: 14px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .patient-info-box p:hover {
+    transform: translateX(0);
+  }
+
+  .appointments-section h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .appointments-section h3::before {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .appointments-section .appointment-card {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .appointments-section .appointment-header h3 {
+    font-size: 16px;
+  }
+
+  .appointments-section .status {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .appointments-section .appointment-details p {
+    font-size: 13px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .appointments-section .appointment-details p strong {
+    min-width: auto;
+  }
+}
+
+
 /*####################################################### CSS for AppointmentCard Component ##########################################################*/
 /* Card structure */
 .appointment-card {
-  background: #ffffff;
-  border: 0px solid #e1e1e1;
-  border-radius: 10px;
-  padding: 15px 18px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
 }
 
 .appointment-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 /* Header */
@@ -1348,44 +1806,122 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--gray-200);
 }
 
 .appointment-header h3 {
   font-size: 18px;
-  color: var(--primary-blue);
+  color: var(--gray-900);
   margin: 0;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.appointment-header h3::before {
+  content: '👨‍⚕️';
+  font-size: 20px;
 }
 
 /* Details */
+.appointment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .appointment-details p {
   font-size: 14px;
-  margin: 4px 0;
-  color: #555;
+  margin: 0;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.appointment-details p strong {
+  color: var(--gray-700);
+  font-weight: 600;
+  min-width: 70px;
 }
 
 /* Status */
 .status {
-  padding: 4px 10px;
+  padding: 6px 14px;
   font-size: 12px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-transform: capitalize;
+  border-radius: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
-.status-confirmed {
-  background: #e0f2fe;
-  color: var(--primary-blue);
+.status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+.status-booked {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.status-booked::before {
+  background: #22c55e;
+}
+
+.status-completed {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+.status-completed::before {
+  background: #3b82f6;
+}
+
+.status-canceled {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.status-canceled::before {
+  background: #ef4444;
 }
 
 .status-pending {
-  background: #fef3c7;
-  color: #f59e0b;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+  border: 1px solid #fcd34d;
 }
 
-.status-cancelled {
-  background: #fee2e2;
-  color: #ef4444;
+.status-pending::before {
+  background: #f59e0b;
 }
 
 /*###################################################### CSS for Appointments Page #################################################################*/
@@ -1393,85 +1929,150 @@ a {
 .appointments-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
-  gap: 24px;
-  margin-top: 20px;
+  gap: 28px;
+  margin-top: 24px;
   margin-bottom: 50px;
 }
 
 /* Wrapper around card */
 .appointment-wrapper {
   background: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--gray-200);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 18px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.appointment-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary-blue), var(--secondary-cyan));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .appointment-wrapper:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(14, 165, 233, 0.12), 0 4px 8px rgba(14, 165, 233, 0.08);
+  border-color: var(--primary-blue);
+}
+
+.appointment-wrapper:hover::before {
+  opacity: 1;
 }
 
 /* Action Buttons Container */
 .appointment-actions {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
   margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-200);
 }
 
 /* Action Buttons */
 .appointment-actions button {
   flex: 1;
-  padding: 10px 12px;
+  padding: 11px 16px;
   font-size: 14px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.25s ease;
-  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
   color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  letter-spacing: 0.02em;
 }
 
-/* Individual action colors with softer tones */
-.view-action {
-  background: var(--primary-blue);
+.appointment-actions button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
 }
+
+.appointment-actions button:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.appointment-actions button:active {
+  transform: scale(0.97);
+}
+
+/* Individual action colors with professional palette */
+.view-action {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.25);
+}
+
 .view-action:hover {
-  background: var(--primary-dark);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.35);
+  transform: translateY(-2px);
 }
 
 .track-action {
-  background: var(--secondary-cyan);
+  background: linear-gradient(135deg, var(--secondary-cyan) 0%, var(--accent-teal) 100%);
+  box-shadow: 0 2px 6px rgba(6, 182, 212, 0.25);
 }
+
 .track-action:hover {
-  background: var(--accent-teal);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.35);
+  transform: translateY(-2px);
 }
 
 .reschedule-action {
-  background: #f59e0b;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);
 }
+
 .reschedule-action:hover {
-  background: #d97706;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+  transform: translateY(-2px);
 }
 
 .cancel-action {
-  background: #ef4444;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.25);
 }
+
 .cancel-action:hover {
-  background: #dc2626;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+  transform: translateY(-2px);
 }
 
 /* Empty State */
 .no-appointments {
   text-align: center;
   font-size: 16px;
-  color: #555;
-  margin-top: 30px;
+  color: var(--text-secondary);
+  margin-top: 40px;
+  padding: 60px 20px;
+  background: var(--gray-50);
+  border-radius: 16px;
+  border: 2px dashed var(--gray-300);
 }
 
 /* ================================== RESPONSIVE APPOINTMENTS PAGE ================================== */

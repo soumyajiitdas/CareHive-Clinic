@@ -43,38 +43,38 @@ export const Patients = () => {
   }
 
   return (
-    <div className="page-container">
-      <h2 className="page-title">Patient Dashboard <span>:</span></h2>
+    <div className="page-container" data-testid="patient-dashboard">
+      <h2 className="page-title" data-testid="dashboard-title">Patient Dashboard <span>:</span></h2>
 
       {/* Section 1 - Patient Info */}
-      <div className="patient-info-box">
+      <div className="patient-info-box" data-testid="patient-info-box">
         <h3>Patient Information</h3>
         {patient && patient.userId ? (
           <>
-            <p><strong>Name:</strong> {patient.userId.name}</p>
-            <p><strong>Age:</strong> {patient.age} ; <strong>Gender:</strong> {patient.gender}</p>
-            <p><strong>Phone No:</strong> {patient.phone} ; <strong>Email:</strong> {patient.userId.email}</p>
-            <p><strong>Address:</strong> {patient.address}</p>
-            <p><strong>Medical History:</strong> {patient.medicalHistory}</p>
+            <p data-testid="patient-name"><strong>Name:</strong> {patient.userId.name}</p>
+            <p data-testid="patient-age-gender"><strong>Age:</strong> {patient.age} ; <strong>Gender:</strong> {patient.gender}</p>
+            <p data-testid="patient-contact"><strong>Phone No:</strong> {patient.phone} ; <strong>Email:</strong> {patient.userId.email}</p>
+            <p data-testid="patient-address"><strong>Address:</strong> {patient.address}</p>
+            <p data-testid="patient-medical-history"><strong>Medical History:</strong> {patient.medicalHistory}</p>
           </>
         ) : (
-          <p>No patient information available.</p>
+          <p data-testid="no-patient-info">No patient information available.</p>
         )}
       </div>
 
       {/* Section 2 - Appointments */}
-      <div className="appointments-section">
+      <div className="appointments-section" data-testid="appointments-section">
         <h3>Recent Appointments</h3>
         {appointments.length > 0 ? (
-          <div className="appointments-grid">
+          <div className="appointments-grid" data-testid="appointments-grid">
             {appointments.map(appt => (
-              <div key={appt._id}>
+              <div key={appt._id} data-testid={`appointment-${appt._id}`}>
                 <AppointmentCard appointment={appt} />
               </div>
             ))}
           </div>
         ) : (
-          <p className="no-appointments">No appointments found.</p>
+          <p className="no-appointments" data-testid="no-appointments">No appointments found.</p>
         )}
       </div>
     </div>
