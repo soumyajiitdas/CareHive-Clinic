@@ -112,7 +112,7 @@ a {
   color: var(--primary-dark);
 }
 
-/*############################################# CSS for Navbar Component ####################################################################################*/
+/*############################################# Navbar Component #################################################################*/
 /* Container */
 .navbar {
   position: sticky;
@@ -326,7 +326,7 @@ a {
   }
 }
 
-/*################################################## CSS for Home Page ##########################################################################*/
+/*################################################## Home Page ##########################################################################*/
 /* Buttons */
 .btn {
   padding: 0.875rem 1.75rem;
@@ -1201,7 +1201,7 @@ a {
 }
 
 
-/*################################################ CSS for Doctors Page ########################################################################## */
+/*################################################ Doctors Page ##################################################################### */
 /* Grid */
 .doctor-list {
   display: grid;
@@ -1420,7 +1420,7 @@ a {
   }
 }
 
-/*###################################################### CSS for Patients Page #####################################################################*/
+/*###################################################### Patients Page ############################################################*/
 /* Patient Info Box - Enhanced Design */
 .patient-info-box {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
@@ -1510,26 +1510,6 @@ a {
   font-size: 20px;
   display: inline-block;
   width: 24px;
-}
-
-.patient-info-box p:nth-child(2) strong::before {
-  content: '📋';
-}
-
-.patient-info-box p:nth-child(3) strong::before {
-  content: '🎂';
-}
-
-.patient-info-box p:nth-child(4) strong::before {
-  content: '📞';
-}
-
-.patient-info-box p:nth-child(5) strong::before {
-  content: '📍';
-}
-
-.patient-info-box p:nth-child(6) strong::before {
-  content: '🏥';
 }
 
 /* Appointments Section Styling - Enhanced */
@@ -2188,45 +2168,45 @@ a {
   }
 }
 
-/*#################################################### CSS for Appointment Form Component ########################################################*/
+/*#################################################### Appointment Form Component #############################################*/
 .appointment-form-container {
   max-width: 100%;
   margin: 40px auto;
   padding: 25px;
-  background-color: #ffffff; /* Changed to white to match other cards */
-  border-radius: 10px; /* Slightly larger border-radius */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
-  color: #2c3e50; /* Dark text color from body */
-  font-family: "Segoe UI", Tahoma, sans-serif; /* Consistent font */
-  border: 1px solid #e1e1e1; /* Light border */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  color: #2c3e50; 
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  border: 1px solid #e1e1e1;
 }
 
 .appointment-form-container h2 {
   text-align: center;
   margin-bottom: 25px;
-  color: var(--primary-blue); /* Accent color for heading */
+  color: var(--primary-blue);
   font-size: 28px;
 }
 
 .appointment-form {
   display: flex;
   flex-direction: column;
-  gap: 18px; /* Increased gap */
+  gap: 18px; 
 }
 
 .appointment-form label {
-  font-weight: 600; /* Bolder label */
-  color: var(--gray-700); /* Slightly darker label color */
+  font-weight: 600; 
+  color: var(--gray-700);
 }
 
 .appointment-form select,
 .appointment-form input,
 .appointment-form textarea {
-  padding: 12px; /* Increased padding */
-  border-radius: 8px; /* Softer corners */
-  border: 1px solid #dcdcdc; /* Light border for inputs */
-  background-color: #f8f9fa; /* Light background for inputs */
-  color: var(--text-primary); /* Dark text color for inputs */
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  background-color: #f8f9fa;
+  color: var(--text-primary);
   font-size: 16px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -2234,22 +2214,22 @@ a {
 .appointment-form select:focus,
 .appointment-form input:focus,
 .appointment-form textarea:focus {
-  border-color: var(--primary-blue); /* Accent color on focus */
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2); /* Soft glow on focus */
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
   outline: none;
 }
 
 .appointment-form textarea {
   resize: vertical;
-  min-height: 100px; /* Slightly larger min-height */
+  min-height: 100px;
 }
 
 .appointment-form button {
-  padding: 14px; /* Increased padding */
-  background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark)); /* Accent color for button */
+  padding: 14px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
   color: white;
   border: none;
-  border-radius: 8px; /* Softer corners */
+  border-radius: 8px;
   cursor: pointer;
   font-size: 18px;
   font-weight: 600;
@@ -2258,16 +2238,16 @@ a {
 }
 
 .appointment-form button:hover {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue)); /* Darker accent color on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+  transform: translateY(-2px);
 }
 
 .form-message {
   text-align: center;
-  font-weight: 600; /* Bolder message */
+  font-weight: 600;
   margin-top: 20px;
   font-size: 16px;
-  color: var(--primary-blue); /* Accent color for messages */
+  color: var(--primary-blue);
 }
 
 /* ================================== RESPONSIVE APPOINTMENT FORM ================================== */
@@ -2309,7 +2289,7 @@ a {
   }
 }
 
-/*##################################################### CSS for Login Page #############################################################*/
+/*####################################################  Login Page ###########################################################*/
 /* Login Page Container */
 .login-container {
   max-width: 40%;
@@ -2397,7 +2377,7 @@ a {
   }
 }
 
-/*##################################################### CSS for Register Page ############################################################*/
+/*################################################### Register Page #################################################*/
 /* Register Page Container */
 .register-container {
   max-width: 50%;
@@ -2541,7 +2521,7 @@ a {
 
 /* Large devices (desktops, 992px and up) - default styles already handle this */
 
-/*################################################### CSS for Footer Component ##########################################################*/
+/*################################################### Footer Component ########################################################*/
 /* Footer Base */
 .footer {
   background: var(--gray-900);

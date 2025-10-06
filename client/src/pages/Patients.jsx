@@ -25,7 +25,6 @@ export const Patients = () => {
         }
       } catch (err) {
         console.error("Error fetching patient data:", err);
-        setError("Failed to load patient information or appointments. Please try again later.");
       } finally {
         setLoading(false);
       }
@@ -33,10 +32,6 @@ export const Patients = () => {
 
     fetchPatientData();
   }, []);
-
-  if (loading) {
-    return <div className="text-center py-8">Loading patient data...</div>;
-  }
 
   if (error) {
     return <div className="text-center py-8 text-red-500">{error}</div>;
@@ -51,11 +46,11 @@ export const Patients = () => {
         <h3>Patient Information</h3>
         {patient && patient.userId ? (
           <>
-            <p data-testid="patient-name"><strong>Name:</strong> {patient.userId.name}</p>
-            <p data-testid="patient-age-gender"><strong>Age:</strong> {patient.age} ; <strong>Gender:</strong> {patient.gender}</p>
-            <p data-testid="patient-contact"><strong>Phone No:</strong> {patient.phone} ; <strong>Email:</strong> {patient.userId.email}</p>
-            <p data-testid="patient-address"><strong>Address:</strong> {patient.address}</p>
-            <p data-testid="patient-medical-history"><strong>Medical History:</strong> {patient.medicalHistory}</p>
+            <p><strong>📋 Name:</strong> {patient.userId.name}</p>
+            <p><strong>🎂 Age:</strong> {patient.age} ; <strong>🧩 Gender:</strong> {patient.gender}</p>
+            <p><strong>📞 Phone No:</strong> {patient.phone} ; <strong>📧 Email:</strong> {patient.userId.email}</p>
+            <p><strong>📍 Address:</strong> {patient.address}</p>
+            <p><strong>🏥 Medical History:</strong> {patient.medicalHistory}</p>
           </>
         ) : (
           <p data-testid="no-patient-info">No patient information available.</p>
