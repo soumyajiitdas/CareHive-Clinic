@@ -347,6 +347,10 @@ a {
   color: #ffffff;
 }
 
+.btn-primary span {
+  color: #ffffff;
+}
+
 .btn-primary:hover {
   background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
   transform: translateY(-2px);
@@ -1417,40 +1421,17 @@ a {
 }
 
 /*###################################################### CSS for Patients Page #####################################################################*/
-/* Patient Info Box */
-.patient-info-box {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.patient-info-box h3 {
-  margin-bottom: 12px;
-  font-size: 18px;
-  color: var(--gray-900);
-}
-
-.patient-info-box p {
-  font-size: 14px;
-  margin: 6px 0;
-  color: #555;
-}
-
-/*###################################################### CSS for Patients Page #####################################################################*/
-/* Patient Info Box */
+/* Patient Info Box - Enhanced Design */
 .patient-info-box {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   border: 2px solid var(--gray-200);
   border-radius: 20px;
-  padding: 32px;
+  padding: 36px;
   margin-bottom: 40px;
-  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 25px rgba(14, 165, 233, 0.08);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .patient-info-box::before {
@@ -1459,71 +1440,76 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  height: 5px;
+  height: 4px;
   background: linear-gradient(90deg, var(--primary-blue), var(--secondary-cyan), var(--accent-teal));
 }
 
 .patient-info-box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(14, 165, 233, 0.12), 0 4px 8px rgba(14, 165, 233, 0.08);
   border-color: var(--primary-blue);
 }
 
 .patient-info-box h3 {
-  margin-bottom: 24px;
-  font-size: 24px;
+  margin-bottom: 28px;
+  font-size: 1.75rem;
   color: var(--gray-900);
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding-bottom: 16px;
+  gap: 14px;
+  padding-bottom: 20px;
   border-bottom: 2px solid var(--gray-200);
+  letter-spacing: -0.025em;
 }
 
 .patient-info-box h3::before {
   content: '👤';
-  font-size: 28px;
+  font-size: 32px;
   background: linear-gradient(135deg, var(--primary-blue), var(--secondary-cyan));
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.2);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
 }
 
 .patient-info-box p {
-  font-size: 16px;
-  margin: 14px 0;
+  font-size: 1rem;
+  margin: 12px 0;
   color: var(--text-secondary);
   line-height: 1.8;
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px;
-  border-radius: 10px;
-  background: rgba(14, 165, 233, 0.03);
-  transition: all 0.2s ease;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(14, 165, 233, 0.04);
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
 }
 
 .patient-info-box p:hover {
-  background: rgba(14, 165, 233, 0.08);
-  transform: translateX(5px);
+  background: rgba(14, 165, 233, 0.1);
+  transform: translateX(8px);
+  border-color: rgba(14, 165, 233, 0.2);
 }
 
 .patient-info-box p strong {
-  color: var(--primary-blue);
+  color: var(--gray-900);
   font-weight: 600;
-  min-width: 140px;
+  min-width: 150px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .patient-info-box p strong::before {
-  font-size: 18px;
+  font-size: 20px;
+  display: inline-block;
+  width: 24px;
 }
 
 .patient-info-box p:nth-child(2) strong::before {
@@ -1546,34 +1532,35 @@ a {
   content: '🏥';
 }
 
-/* Appointments Section Styling */
+/* Appointments Section Styling - Enhanced */
 .appointments-section {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .appointments-section h3 {
-  font-size: 24px;
+  font-size: 1.75rem;
   color: var(--gray-900);
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding-bottom: 12px;
+  gap: 14px;
+  padding-bottom: 20px;
   border-bottom: 2px solid var(--gray-200);
+  letter-spacing: -0.025em;
 }
 
 .appointments-section h3::before {
   content: '📅';
-  font-size: 28px;
+  font-size: 32px;
   background: linear-gradient(135deg, var(--secondary-cyan), var(--accent-teal));
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(6, 182, 212, 0.2);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);
 }
 
 /* Enhanced Appointment Cards for Patient Page */
@@ -1581,8 +1568,8 @@ a {
   background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
   border: 2px solid var(--gray-200);
   border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  padding: 22px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 8px 20px rgba(14, 165, 233, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -1596,69 +1583,131 @@ a {
   width: 4px;
   height: 100%;
   background: linear-gradient(180deg, var(--primary-blue), var(--secondary-cyan));
+  opacity: 1;
 }
 
 .appointments-section .appointment-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(14, 165, 233, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(14, 165, 233, 0.12), 0 4px 8px rgba(14, 165, 233, 0.08);
   border-color: var(--primary-blue);
 }
 
+.appointments-section .appointment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
 .appointments-section .appointment-header h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--primary-blue);
   margin: 0;
   padding: 0;
   border: none;
   font-weight: 700;
-}
-
-.appointments-section .appointment-header h3::before {
-  display: none;
-}
-
-.appointments-section .status {
-  padding: 6px 14px;
-  font-size: 13px;
-  border-radius: 20px;
-  font-weight: 600;
-  text-transform: capitalize;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  letter-spacing: 0.3px;
-}
-
-.appointments-section .status-booked {
-  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-  color: #1e40af;
-}
-
-.appointments-section .status-completed {
-  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-  color: #065f46;
-}
-
-.appointments-section .status-canceled {
-  background: linear-gradient(135deg, #fee2e2, #fecaca);
-  color: #991b1b;
-}
-
-.appointments-section .appointment-details p {
-  font-size: 15px;
-  color: var(--text-secondary);
-  margin: 8px 0;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
+.appointments-section .appointment-header h3::before {
+  content: '👨‍⚕️';
+  font-size: 22px;
+  background: none;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.appointments-section .status {
+  padding: 7px 16px;
+  font-size: 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.appointments-section .status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.appointments-section .status-booked {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.appointments-section .status-booked::before {
+  background: #22c55e;
+}
+
+.appointments-section .status-completed {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+.appointments-section .status-completed::before {
+  background: #3b82f6;
+}
+
+.appointments-section .status-canceled {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.appointments-section .status-canceled::before {
+  background: #ef4444;
+}
+
+.appointments-section .appointment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.appointments-section .appointment-details p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.6;
+}
+
 .appointments-section .appointment-details p strong {
   color: var(--gray-900);
   font-weight: 600;
-  min-width: 80px;
+  min-width: 90px;
 }
 
 
 /* ================================== RESPONSIVE PATIENTS PAGE ================================== */
+@media (max-width: 992px) {
+  .patient-info-box {
+    padding: 28px;
+  }
+
+  .appointments-section {
+    margin-top: 35px;
+  }
+}
+
 @media (max-width: 768px) {
   .patient-info-box {
     padding: 24px;
@@ -1667,49 +1716,52 @@ a {
   }
 
   .patient-info-box h3 {
-    font-size: 20px;
+    font-size: 1.5rem;
     margin-bottom: 20px;
   }
 
   .patient-info-box h3::before {
-    width: 45px;
-    height: 45px;
-    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
   }
 
   .patient-info-box p {
-    font-size: 15px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    font-size: 0.95rem;
+    padding: 12px;
+    flex-wrap: wrap;
   }
 
   .patient-info-box p strong {
-    min-width: auto;
+    min-width: 120px;
+  }
+
+  .appointments-section {
+    margin-top: 30px;
   }
 
   .appointments-section h3 {
-    font-size: 20px;
+    font-size: 1.5rem;
     margin-bottom: 20px;
   }
 
   .appointments-section h3::before {
-    width: 45px;
-    height: 45px;
-    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
   }
 
   .appointments-section .appointment-card {
-    padding: 16px;
+    padding: 18px;
     border-radius: 14px;
   }
 
   .appointments-section .appointment-header h3 {
-    font-size: 18px;
+    font-size: 1.15rem;
   }
 
   .appointments-section .appointment-details p {
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 }
 
@@ -1717,63 +1769,86 @@ a {
   .patient-info-box {
     padding: 20px;
     margin-bottom: 25px;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
   .patient-info-box h3 {
-    font-size: 18px;
+    font-size: 1.25rem;
     margin-bottom: 16px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 12px;
   }
 
   .patient-info-box h3::before {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    border-radius: 10px;
   }
 
   .patient-info-box p {
-    font-size: 14px;
-    padding: 10px;
+    font-size: 0.9rem;
+    padding: 10px 12px;
     margin: 10px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 
   .patient-info-box p:hover {
     transform: translateX(0);
   }
 
+  .patient-info-box p strong {
+    min-width: auto;
+  }
+
+  .appointments-section {
+    margin-top: 25px;
+  }
+
   .appointments-section h3 {
-    font-size: 18px;
+    font-size: 1.25rem;
     margin-bottom: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .appointments-section h3::before {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    border-radius: 10px;
+  }
+
+  .appointments-section .appointment-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .appointments-section .appointment-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
 
-  .appointments-section h3::before {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-  }
-
-  .appointments-section .appointment-card {
-    padding: 14px;
-    border-radius: 12px;
-  }
-
   .appointments-section .appointment-header h3 {
-    font-size: 16px;
+    font-size: 1rem;
+  }
+
+  .appointments-section .appointment-header h3::before {
+    font-size: 18px;
   }
 
   .appointments-section .status {
     font-size: 11px;
-    padding: 5px 12px;
+    padding: 6px 12px;
   }
 
   .appointments-section .appointment-details p {
-    font-size: 13px;
+    font-size: 0.85rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
