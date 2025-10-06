@@ -28,10 +28,18 @@ export const Appointments = () => {
 
               {/* Action buttons */}
               <div className="appointment-actions">
-                <button className="btn view-action">View</button>
-                <button className="btn track-action">Track</button>
-                <button className="btn reschedule-action">Reschedule</button>
-                <button className="btn cancel-action">Cancel</button>
+                <button className="btn view-action" title="View Details">
+                  <span>👁️</span> View
+                </button>
+                <button className="btn track-action" title="Track Status">
+                  <span>📍</span> Track
+                </button>
+                <button className="btn reschedule-action" title="Reschedule Appointment">
+                  <span>📅</span> Reschedule
+                </button>
+                <button className="btn cancel-action" title="Cancel Appointment">
+                  <span>✖️</span> Cancel
+                </button>
               </div>
             </div>
           ))}

@@ -34,7 +34,7 @@ const AppointmentForm = () => {
 
         try {
             const decodedToken = jwtDecode(token);
-            const patientId = decodedToken.id; // Assuming 'id' in token is the patient's userId
+            const patientId = decodedToken.id;
 
             const dateTime = new Date(`${formData.date}T${formData.time}`).toISOString();
 
@@ -56,7 +56,7 @@ const AppointmentForm = () => {
 
     return (
         <form className="appointment-form" onSubmit={handleSubmit}>
-            <h2 className="page-title">Appointment Form<span>:</span></h2>
+            <h2 className="page-title">Appointment Form <span>:</span></h2>
             <label>Select Doctor:</label>
             <select
                 name="doctorId"
