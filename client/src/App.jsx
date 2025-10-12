@@ -8,7 +8,8 @@ import { Home } from './pages/Home';
 import { Doctors } from "./pages/Doctors";
 import { Patients } from "./pages/Patients";
 import { Appointments } from "./pages/Appointments";
-import Register from "./pages/Register";
+import PatientRegister from "./pages/PatientRegister";
+import DoctorRegister from "./pages/DoctorRegister";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -33,7 +34,9 @@ const App = () => {
         {/* Public Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<PatientRegister />} />
+        <Route path="/register/patient" element={<PatientRegister />} />
+        <Route path="/register/doctor" element={<DoctorRegister />} />
 
         {/* Protected Routes */}
         <Route
@@ -67,4 +70,3 @@ const App = () => {
 };
 
 export default App;
-

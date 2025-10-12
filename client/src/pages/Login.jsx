@@ -31,30 +31,43 @@ export default function Login({ onLoginSuccess }) {
     };
 
     return (
-        <div className="login-container">
-        <h2 className="page-title">Login Form <span>:</span></h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    name="email"
-                    placeholder="Email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    name="password"
-                    placeholder="Password"
-                    type="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
-                <button type="submit">Login</button>
-            </form>
-            <p style={{ marginTop: "10px" }}>
-                Don't have an account? <Link to="/register">Register here</Link>
-            </p>
+        <div className="register-page">
+            <div className="login-container">
+                <div className="register-header">
+                    <div className="register-icon">🔐</div>
+                    <h2 data-testid="login-title">Welcome Back!</h2>
+                    <p>Sign in to access your CareHive account</p>
+                </div>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        name="email"
+                        placeholder="Email address"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        data-testid="login-email-input"
+                    />
+                    <input
+                        name="password"
+                        placeholder="Password"
+                        type="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                        data-testid="login-password-input"
+                    />
+                    <button type="submit" data-testid="login-button">
+                        Sign In
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </button>
+                </form>
+                <p>
+                    Don't have an account? <Link to="/register">Register here</Link>
+                </p>
+            </div>
         </div>
     );
 }

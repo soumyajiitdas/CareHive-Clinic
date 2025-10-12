@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import API from "../services/Api";
 
 export default function Register() {
+    const navigate = useNavigate();
     const [role, setRole] = useState("patient");
     const [formData, setFormData] = useState({
         name: "",
@@ -63,24 +65,9 @@ export default function Register() {
                 };
 
         try {
-            const res = await API.post("/users/register", payload);
-            alert(res.data.message);
-            // Optionally reset form
-            setFormData({
-                name: "",
-                email: "",
-                password: "",
-                age: "",
-                gender: "male",
-                phone: "",
-                address: "",
-                medicalHistory: "",
-                specialization: "",
-                experienceYears: "",
-                qualification: "",
-                clinicAddress: "",
-            });
-            setRole("patient");
+            await API.post("/users/register", payload);
+            alert("✅ Registration successful! Please login to continue.");
+            navigate("/login");
         } catch (err) {
             alert(err.response?.data?.message || "❌ Registration failed");
         }
